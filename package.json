@@ -1,0 +1,19 @@
+{
+    "name": "touit",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "sass": "sass --watch scss/style.scss css/style.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ajitzi/touiteur.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ajitzi/touiteur/issues"
+    },
+    "homepage": "https://github.com/ajitzi/touiteur#readme"
+}

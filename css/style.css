@@ -1,0 +1,355 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set root font-size @10px equivalent */
+html {
+  font-size: 0.625em;
+  /* fallback IE8+ */
+  font-size: calc( 1em * 0.625);
+  /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+}
+
+/* Remove focus for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Set cursor pointer */
+label[for],
+button,
+input[type=submit],
+select {
+  cursor: pointer;
+}
+
+/* Remove font style on address */
+address {
+  font-style: normal;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Print external URLs */
+@media print {
+  a {
+    text-decoration: underline;
+  }
+
+  a[href]:not([href^="#"])::after {
+    content: "(" attr(href) ")";
+  }
+}
+/* Helper classes */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  width: 1px;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* Image replacement technique 2012 H5BP  - https://css-tricks.com/the-image-replacement-museum/ */
+.ir {
+  font: 0/0 a;
+  color: transparent;
+  border: 0;
+  text-shadow: none;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+h1,
+h2,
+h3,
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+/* roboto-regular - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/roboto-v27-latin/roboto-v27-latin-regular.woff2") format("woff2"), url("../fonts/roboto-v27-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../fonts/roboto-v27-latin/roboto-v27-latin-500.woff2") format("woff2"), url("../fonts/roboto-v27-latin-500.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/nunito-v16-latin/roboto-v27-latin-700.woff2") format("woff2"), url("../fonts/roboto-v27-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nunito-regular - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/nunito-v16-latin/nunito-v16-latin-regular.woff2") format("woff2"), url("../fonts/nunito-v16-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nunito-700 - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/nunito-v16-latin/nunito-v16-latin-700.woff2") format("woff2"), url("../fonts/nunito-v16-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+.main-grid {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 10rem 1fr 1fr 1fr;
+  gap: 2rem 2rem;
+  grid-template-areas: "h t" "a m" "a m" "a m";
+}
+
+body {
+  background-color: #FFF;
+  color: #111B2F;
+}
+
+header {
+  grid-area: h;
+  align-self: center;
+  position: fixed;
+  top: 2rem;
+}
+header img {
+  margin-left: 8rem;
+}
+
+aside {
+  grid-area: a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+main {
+  grid-area: m;
+}
+
+.top-likes {
+  grid-area: t;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+}
+@media screen and (min-width: 36em) {
+  .container {
+    max-width: 51.2rem;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 48em) {
+  .container {
+    max-width: 68.8rem;
+  }
+}
+@media screen and (min-width: 48em) and (min-width: 62em) {
+  .container {
+    max-width: 91.2rem;
+  }
+}
+@media screen and (min-width: 48em) and (min-width: 75em) {
+  .container {
+    max-width: 112rem;
+  }
+}
+
+.touit {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem;
+  padding: 2rem;
+  border-radius: 3rem;
+  background-color: #414B61;
+  color: #EDEBE8;
+  position: fixed;
+}
+.touit form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.touit label {
+  font-weight: 700;
+}
+.touit label,
+.touit input,
+.touit textarea {
+  display: block;
+  width: 100%;
+  border: none;
+}
+.touit #pseudo {
+  min-height: 5rem;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  background-color: #FFF;
+  position: relative;
+}
+.touit #message {
+  min-height: 10rem;
+  padding-left: 1rem;
+  background-color: #FFF;
+  position: relative;
+}
+.touit button {
+  margin-top: 1rem;
+  min-width: 15rem;
+  height: 5rem;
+  position: relative;
+  border-radius: 10rem;
+}
+.touit button img {
+  display: inline;
+  position: absolute;
+  top: 7px;
+  transform: translateX(5px);
+  width: 2rem;
+}
+
+.tuile {
+  background-color: #9AA1B0;
+  border-radius: 3rem;
+  margin-bottom: 2rem;
+}
+.tuile h2 {
+  color: #EDEBE8;
+}
+
+.tuile-touit hr {
+  color: #414B61;
+  border: solid 1px;
+}
+.tuile-touit p:last-child {
+  text-align: right;
+}
+
+.tuile-header {
+  background-color: #9AA1B0;
+  padding: 1rem 4rem;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+}
+
+.tuile-main {
+  background-color: #FFF;
+  border-left: solid 1px #9AA1B0;
+  border-right: solid 1px #9AA1B0;
+  padding: 1rem 2rem;
+}
+
+.trend {
+  position: fixed;
+  top: 47rem;
+  max-height: 45vh;
+  max-width: 40rem;
+  overflow: scroll;
+}
+
+/*# sourceMappingURL=style.css.map */

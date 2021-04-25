@@ -1,0 +1,63 @@
+@import 'variables';
+.main-grid {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 10rem 1fr 1fr 1fr;
+    gap: 2rem 2rem;
+    grid-template-areas: "h t" "a m" "a m" "a m";
+}
+
+body {
+    background-color: $background;
+    color: $main-text;
+}
+
+header {
+    grid-area: h;
+    align-self: center;
+    position: fixed;
+    top: 2rem;
+    img {
+        margin-left: 8rem;
+    }
+}
+
+aside {
+    grid-area: a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+main {
+    grid-area: m;
+}
+
+.top-likes {
+    grid-area: t;
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    @media screen and (min-width: 36em) {
+        max-width: $container-sm;
+        padding: 0;
+    }
+    @media screen and (min-width: 48em) {
+        max-width: $container-md;
+        // padding-left: 4rem;
+        // padding-right: 4rem;
+        @media screen and (min-width: 62em) {
+            max-width: $container-lg;
+        }
+        @media screen and (min-width: 75em) {
+            max-width: $container-xl;
+        }
+    }
+}
