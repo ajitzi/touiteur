@@ -1,33 +1,59 @@
 .tuile {
-    background-color: $light-text;
-    // padding: 1rem 2rem 2rem;
+    background-color: $background;
     border-radius: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     h2 {
         color: $secondary-color;
     }
+    position: relative;
 }
 
-.tuile-touit {
-    hr {
-        color: $main-color;
-        border: solid 1px;
-    }
-    p:last-child {
-        text-align: right;
+.tuile-trend {
+    .tuile-main {
+        border-bottom: 1px solid $light-text;
+        border-bottom-left-radius: 3rem;
+        border-bottom-right-radius: 3rem;
     }
 }
 
 .tuile-header {
     background-color: $light-text;
-    padding: 1rem 4rem;
+    padding: 0.5rem 3rem 0rem 3rem;
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
 }
 
 .tuile-main {
     background-color: $background;
-    border-left: solid 1px $light-text;
-    border-right: solid 1px $light-text;
     padding: 1rem 2rem;
+}
+
+.tuile-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    text-align: right;
+    min-height: 5.2rem;
+    color: $secondary-color;
+    background-color: $light-text;
+    border: 1px solid $light-text;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    .icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            height: 4rem;
+            padding-right: 1rem;
+        }
+        span {
+            color: black;
+        }
+    }
 }
