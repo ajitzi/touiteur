@@ -1,20 +1,20 @@
 main {
-    height: 85vh;
-    display: grid;
-    grid-template-columns: 3fr;
-    grid-template-rows: 1fr;
-    gap: 3rem;
+    height: 100vh;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .top-likes {
     display: flex;
+    align-items: center;
     gap: 2rem;
-    padding-top: 2.5rem;
-    height: 22rem;
-    max-width: 66%;
+    margin-bottom: 2rem;
     word-wrap: none;
     overflow-x: scroll;
-    position: fixed;
+    min-height: 30rem;
     .tuile {
         max-width: 35rem;
         margin-bottom: 2rem;
@@ -29,15 +29,11 @@ main {
     }
     .tuile-header {
         background: none;
-        position: absolute;
-        top: -3.3rem;
-        left: -30px;
         h2 {
             color: $background;
         }
     }
     .tuile-main {
-        border-bottom: 1px solid $light-text;
         border-top: 1px solid $light-text;
         min-height: 11.8rem;
     }
@@ -46,15 +42,33 @@ main {
         border-top: none;
         border-radius: 0px;
     }
+    .top-1 {
+        .tuile-footer {
+            background-color: #FFD700;
+            border: none;
+        }
+    }
+    .top-2 {
+        .tuile-footer {
+            background-color: #FFD700;
+            border: none;
+        }
+    }
+    .top-3 {
+        .tuile-footer {
+            background-color: #FFD700;
+            border: none;
+        }
+    }
 }
 
 .touit-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 2rem;
     background-color: $main-text;
-    margin-top: 25rem;
-    height: 67vh;
+    height: auto;
     width: 90%;
     margin-right: auto;
     margin-left: auto;
@@ -63,3 +77,12 @@ main {
         max-width: 35rem;
     }
 }
+
+// /* style.css | http://127.0.0.1:5501/css/style.css?_cacheOverride=1619460375407 */
+// .top-likes {
+//     /* height: 40%; */
+//     /* max-width: 100%; */
+//   }
+//   main {
+//     /* height: 95vh; */
+//   }

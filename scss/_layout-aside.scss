@@ -1,5 +1,5 @@
 aside {
-    max-height: 85vh;
+    max-height: 90vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
@@ -41,6 +41,7 @@ aside {
         padding-left: 1rem;
         background-color: $background;
         position: relative;
+        resize: none;
     }
     button {
         margin-top: 1rem;

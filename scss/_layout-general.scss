@@ -6,7 +6,7 @@
     margin-left: 5vw;
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: 10rem 1fr 1fr 1fr;
+    grid-template-rows: 10vh 1fr 1fr 1fr;
     gap: 2rem 2rem;
     grid-template-areas: "h m " "a m " "a m " "a m";
 }

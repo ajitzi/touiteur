@@ -197,7 +197,7 @@ button {
   margin-left: 5vw;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: 10rem 1fr 1fr 1fr;
+  grid-template-rows: 10vh 1fr 1fr 1fr;
   gap: 2rem 2rem;
   grid-template-areas: "h m " "a m " "a m " "a m";
 }
@@ -264,7 +264,7 @@ main {
   padding: 0.5rem 2rem;
   text-align: right;
   min-height: 5.2rem;
-  color: #EDEBE8;
+  color: #000;
   background-color: #9AA1B0;
   border: 1px solid #9AA1B0;
   border-bottom-left-radius: 3rem;
@@ -279,12 +279,9 @@ main {
   height: 4rem;
   padding-right: 1rem;
 }
-.tuile-footer .icons span {
-  color: black;
-}
 
 aside {
-  max-height: 85vh;
+  max-height: 90vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr;
@@ -327,6 +324,7 @@ aside {
   padding-left: 1rem;
   background-color: #FFF;
   position: relative;
+  resize: none;
 }
 .touit button {
   margin-top: 1rem;
@@ -357,22 +355,22 @@ aside {
 }
 
 main {
-  height: 85vh;
-  display: grid;
-  grid-template-columns: 3fr;
-  grid-template-rows: 1fr;
-  gap: 3rem;
+  height: 100vh;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .top-likes {
   display: flex;
+  align-items: center;
   gap: 2rem;
-  padding-top: 2.5rem;
-  height: 22rem;
-  max-width: 66%;
+  margin-bottom: 2rem;
   word-wrap: none;
   overflow-x: scroll;
-  position: fixed;
+  min-height: 30rem;
 }
 .top-likes .tuile {
   max-width: 35rem;
@@ -388,15 +386,11 @@ main {
 }
 .top-likes .tuile-header {
   background: none;
-  position: absolute;
-  top: -3.3rem;
-  left: -30px;
 }
 .top-likes .tuile-header h2 {
   color: #FFF;
 }
 .top-likes .tuile-main {
-  border-bottom: 1px solid #9AA1B0;
   border-top: 1px solid #9AA1B0;
   min-height: 11.8rem;
 }
@@ -405,14 +399,26 @@ main {
   border-top: none;
   border-radius: 0px;
 }
+.top-likes .top-1 .tuile-footer {
+  background-color: #FFD700;
+  border: none;
+}
+.top-likes .top-2 .tuile-footer {
+  background-color: #FFD700;
+  border: none;
+}
+.top-likes .top-3 .tuile-footer {
+  background-color: #FFD700;
+  border: none;
+}
 
 .touit-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 2rem;
   background-color: #111B2F;
-  margin-top: 25rem;
-  height: 67vh;
+  height: auto;
   width: 90%;
   margin-right: auto;
   margin-left: auto;
