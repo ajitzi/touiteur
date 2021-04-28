@@ -1,19 +1,18 @@
 aside {
-    max-height: 90vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-    gap: 3rem;
+    @media screen and (min-width: 48em) {
+        max-height: 80vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        gap: 3rem;
+    }
 }
 
 .touit {
     padding: 2rem;
     border-radius: 3rem;
-    // background-color: $secondary-color;
     color: $main-color;
     align-self: center;
-    // box-shadow: 0 10px 30px $secondary-color;
-    // border-radius: 50px;
     border-radius: 50px;
     background: #e0e0e0;
     box-shadow: 20px 20px 20px #bebebe, -20px -20px 60px #ffffff;
@@ -24,6 +23,7 @@ aside {
     }
     label {
         font-weight: 700;
+        z-index: 5;
     }
     label,
     input,
@@ -37,8 +37,11 @@ aside {
         padding-left: 2rem;
         margin-bottom: 2rem;
         font-size: 2rem;
-        background-color: $background;
+        // background-color: $background;
         position: relative;
+        background: #e0e0e0;
+        box-shadow: inset 5px 5px 10px #8f8f8f, inset -5px -5px 10px #eeeeee;
+        border-radius: 10px;
     }
     #message {
         min-height: 10rem;
@@ -46,6 +49,9 @@ aside {
         background-color: $background;
         position: relative;
         resize: none;
+        background: #e0e0e0;
+        box-shadow: inset 5px 5px 14px #8f8f8f, inset -5px -5px 14px #eeeeee;
+        border-radius: 10px;
     }
     button {
         margin-top: 1rem;
@@ -71,7 +77,24 @@ aside {
     }
 }
 
+@media screen and (min-width: 48em) {
+    .trend-container {
+        position: relative;
+        h2 {
+            position: absolute;
+            z-index: 20;
+            transform: rotate(-90deg);
+            left: -7.5rem;
+            top: 5rem;
+        }
+    }
+}
+
 .trend {
-    overflow: scroll;
-    max-height: 50vh;
+    margin-top: 5rem;
+    @media screen and (min-width: 48em) {
+        overflow: scroll;
+        max-height: 45vh;
+        margin-top: 0;
+    }
 }

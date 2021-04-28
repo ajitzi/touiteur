@@ -150,6 +150,13 @@ button {
   font-weight: 400;
 }
 
+h2 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
 /* roboto-regular - latin */
 @font-face {
   font-family: "Roboto";
@@ -190,30 +197,58 @@ button {
   src: local(""), url("../fonts/nunito-v16-latin/nunito-v16-latin-700.woff2") format("woff2"), url("../fonts/nunito-v16-latin-700.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-.main-grid {
-  position: fixed;
-  width: 90vw;
-  min-height: 100vh;
-  margin-left: 5vw;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-rows: 10vh 1fr 1fr 1fr;
-  gap: 2rem 2rem;
-  grid-template-areas: "h m " "a m " "a m " "a m";
+@media screen and (max-width: 48em) {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+  }
 }
-
+@media screen and (max-width: 48em) and (min-width: 36em) {
+  .container {
+    max-width: 51.2rem;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 48em) {
+  .main-grid {
+    position: fixed;
+    width: 90vw;
+    min-height: 100vh;
+    margin-top: 1rem;
+    margin-left: 5vw;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 10vh 1fr 1fr 1fr;
+    gap: 2rem 2rem;
+    grid-template-areas: "h m " "a m " "a m " "a m";
+  }
+}
 body {
   background-color: #e0e0e0;
   color: #111B2F;
 }
 
 header {
-  grid-area: h;
-  align-self: center;
-  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 header img {
   margin-top: 2rem;
+}
+@media screen and (min-width: 48em) {
+  header {
+    grid-area: h;
+    align-self: center;
+    justify-self: center;
+  }
+}
+header img {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
   filter: drop-shadow(0 2px 10px #414B61);
 }
 
@@ -226,7 +261,7 @@ main {
 }
 
 .tuile {
-  background-color: #FFF;
+  height: min-content;
   border-radius: 3rem;
   margin-bottom: 3rem;
   display: flex;
@@ -251,8 +286,9 @@ main {
 }
 
 .tuile-main {
-  background-color: #FFF;
   padding: 1rem 2rem;
+  background: #e0e0e0;
+  box-shadow: inset 5px 5px 14px #8f8f8f, inset -5px -5px 14px #eeeeee;
 }
 
 .tuile-footer {
@@ -269,6 +305,11 @@ main {
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
 }
+@media screen and (max-width: 48em) {
+  .tuile-footer {
+    justify-content: center;
+  }
+}
 .tuile-footer .icons {
   display: flex;
   justify-content: center;
@@ -279,12 +320,14 @@ main {
   padding-right: 1rem;
 }
 
-aside {
-  max-height: 90vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr;
-  gap: 3rem;
+@media screen and (min-width: 48em) {
+  aside {
+    max-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 3rem;
+  }
 }
 
 .touit {
@@ -303,6 +346,7 @@ aside {
 }
 .touit label {
   font-weight: 700;
+  z-index: 5;
 }
 .touit label,
 .touit input,
@@ -316,8 +360,10 @@ aside {
   padding-left: 2rem;
   margin-bottom: 2rem;
   font-size: 2rem;
-  background-color: #FFF;
   position: relative;
+  background: #e0e0e0;
+  box-shadow: inset 5px 5px 10px #8f8f8f, inset -5px -5px 10px #eeeeee;
+  border-radius: 10px;
 }
 .touit #message {
   min-height: 10rem;
@@ -325,6 +371,9 @@ aside {
   background-color: #FFF;
   position: relative;
   resize: none;
+  background: #e0e0e0;
+  box-shadow: inset 5px 5px 14px #8f8f8f, inset -5px -5px 14px #eeeeee;
+  border-radius: 10px;
 }
 .touit button {
   margin-top: 1rem;
@@ -349,28 +398,59 @@ aside {
   transition: 0.3s;
 }
 
+@media screen and (min-width: 48em) {
+  .trend-container {
+    position: relative;
+  }
+  .trend-container h2 {
+    position: absolute;
+    z-index: 20;
+    transform: rotate(-90deg);
+    left: -7.5rem;
+    top: 5rem;
+  }
+}
 .trend {
-  overflow: scroll;
-  max-height: 50vh;
+  margin-top: 5rem;
+}
+@media screen and (min-width: 48em) {
+  .trend {
+    overflow: scroll;
+    max-height: 45vh;
+    margin-top: 0;
+  }
 }
 
-main {
-  height: 100vh;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+@media screen and (min-width: 48em) {
+  main {
+    height: 100vh;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
+@media screen and (min-width: 48em) {
+  .top-container h2 {
+    margin: -1rem;
+  }
+}
 .top-likes {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  word-wrap: none;
-  overflow-x: scroll;
-  min-height: 30rem;
+  flex-direction: column;
+}
+@media screen and (min-width: 48rem) {
+  .top-likes {
+    gap: 2rem;
+    flex-direction: row;
+    margin-bottom: 2rem;
+    word-wrap: none;
+    overflow-x: scroll;
+    min-height: 30rem;
+  }
 }
 .top-likes .tuile {
   max-width: 35rem;
@@ -403,7 +483,7 @@ main {
   border-bottom-right-radius: 10px;
 }
 .top-likes .border-wrap {
-  padding: 0.5rem;
+  padding-bottom: 0.5rem;
   border-radius: 10px;
 }
 .top-likes .top-1 .border-wrap {
@@ -412,16 +492,22 @@ main {
 }
 .top-likes .top-2 .border-wrap {
   background: #e0e0e0;
-  background: radial-gradient(circle, white 20%, silver 100%);
+  background: radial-gradient(circle, white 50%, silver 100%);
 }
 .top-likes .top-3 .border-wrap {
   background: #e0e0e0;
   background: radial-gradient(circle, white 20%, #c96a00 100%);
 }
 
+@media screen and (min-width: 48em) {
+  .touit-list-title {
+    margin: 0;
+  }
+}
 .touit-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-around;
   gap: 2rem;
   background-color: #e0e0e0;

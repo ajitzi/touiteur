@@ -1,5 +1,5 @@
 .tuile {
-    background-color: $background;
+    height: min-content;
     border-radius: 3rem;
     margin-bottom: 3rem;
     display: flex;
@@ -27,8 +27,9 @@
 }
 
 .tuile-main {
-    background-color: $background;
     padding: 1rem 2rem;
+    background: #e0e0e0;
+    box-shadow: inset 5px 5px 14px #8f8f8f, inset -5px -5px 14px #eeeeee;
 }
 
 .tuile-footer {
@@ -44,6 +45,9 @@
     border: 1px solid $light-text;
     border-bottom-left-radius: 3rem;
     border-bottom-right-radius: 3rem;
+    @media screen and (max-width: 48em) {
+        justify-content: center;
+    }
     .icons {
         display: flex;
         justify-content: center;
