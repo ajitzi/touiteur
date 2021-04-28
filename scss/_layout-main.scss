@@ -30,34 +30,42 @@ main {
     .tuile-header {
         background: none;
         h2 {
-            color: $background;
+            color: $main-color;
         }
     }
     .tuile-main {
-        border-top: 1px solid $light-text;
+        // border-top: 1px solid $light-text;
         min-height: 11.8rem;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
     .tuile-footer {
         color: #000;
         border-top: none;
         border-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .border-wrap {
+        padding: 0.5rem;
+        border-radius: 10px;
     }
     .top-1 {
-        .tuile-footer {
-            background-color: #FFD700;
-            border: none;
+        .border-wrap {
+            background: rgb(224, 224, 224);
+            background: radial-gradient(circle, rgb(255, 255, 255) 20%, rgba(255, 215, 0, 1) 100%);
         }
     }
     .top-2 {
-        .tuile-footer {
-            background-color: #FFD700;
-            border: none;
+        .border-wrap {
+            background: rgb(224, 224, 224);
+            background: radial-gradient(circle, rgb(255, 255, 255) 20%, rgba(192, 192, 192, 1) 100%);
         }
     }
     .top-3 {
-        .tuile-footer {
-            background-color: #FFD700;
-            border: none;
+        .border-wrap {
+            background: rgb(224, 224, 224);
+            background: radial-gradient(circle, rgb(255, 255, 255) 20%, rgba(201, 106, 0, 1) 100%);
         }
     }
 }
@@ -67,7 +75,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 2rem;
-    background-color: $main-text;
+    background-color: #e0e0e0;
     height: auto;
     width: 90%;
     margin-right: auto;
@@ -77,12 +85,3 @@ main {
         max-width: 35rem;
     }
 }
-
-// /* style.css | http://127.0.0.1:5501/css/style.css?_cacheOverride=1619460375407 */
-// .top-likes {
-//     /* height: 40%; */
-//     /* max-width: 100%; */
-//   }
-//   main {
-//     /* height: 95vh; */
-//   }
