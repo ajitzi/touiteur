@@ -17,6 +17,12 @@ main {
     }
 }
 
+// .top-container {
+//     padding: 2rem;
+//     border-radius: 50px;
+//     background: #e0e0e0;
+//     box-shadow: 20px 20px 20px #bebebe, -20px -20px 60px #ffffff;
+// }
 .top-likes {
     display: flex;
     align-items: center;
@@ -87,6 +93,20 @@ main {
 @media screen and (min-width: 48em) {
     .touit-list-title {
         margin: 0;
+    }
+}
+
+.touit-list-container {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    // margin-top: 3rem;
+    // margin-bottom: 2rem;
+    @media screen and (min-width: 48em) {
+        padding: 2rem;
+        border-radius: 50px;
+        background: #e0e0e0;
+        box-shadow: 20px 20px 20px #bebebe, -20px -20px 60px #ffffff;
     }
 }
 
