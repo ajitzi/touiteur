@@ -60,8 +60,9 @@ aside {
         position: relative;
         border-radius: 10rem;
         border: none;
-        background-color: $light-text;
-        color: #fff;
+        background: linear-gradient(145deg, #f0f0f0, #cacaca);
+        box-shadow: 10px 10px 20px #a8a8a8, -10px -10px 20px #ffffff;
+        color: $main-text;
         img {
             display: inline;
             position: absolute;
@@ -72,8 +73,8 @@ aside {
     }
     button:hover,
     button:focus {
-        background-color: $main-color;
-        transition: .3s;
+        border: 2px solid $main-text;
+        transition: .2s;
     }
 }
 

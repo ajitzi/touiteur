@@ -298,7 +298,6 @@ main {
   align-items: center;
   padding: 0.5rem 2rem;
   text-align: right;
-  min-height: 5.2rem;
   color: #000;
   background-color: #9AA1B0;
   border: 1px solid #9AA1B0;
@@ -382,8 +381,9 @@ main {
   position: relative;
   border-radius: 10rem;
   border: none;
-  background-color: #9AA1B0;
-  color: #fff;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow: 10px 10px 20px #a8a8a8, -10px -10px 20px #ffffff;
+  color: #111B2F;
 }
 .touit button img {
   display: inline;
@@ -394,8 +394,8 @@ main {
 }
 .touit button:hover,
 .touit button:focus {
-  background-color: #414B61;
-  transition: 0.3s;
+  border: 2px solid #111B2F;
+  transition: 0.2s;
 }
 
 @media screen and (min-width: 48em) {
@@ -426,10 +426,9 @@ main {
   main {
     height: 100vh;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 }
 
@@ -450,12 +449,10 @@ main {
     margin-bottom: 2rem;
     word-wrap: none;
     overflow-x: scroll;
-    min-height: 30rem;
   }
 }
 .top-likes .tuile {
   max-width: 35rem;
-  margin-bottom: 2rem;
   display: inline-block;
   flex-shrink: 0;
   flex-grow: 0;
@@ -470,22 +467,26 @@ main {
 }
 .top-likes .tuile-header h2 {
   color: #414B61;
+  font-size: 1.2rem;
 }
 .top-likes .tuile-main {
+  font-size: 1.2rem;
   min-height: 11.8rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .top-likes .tuile-footer {
   color: #000;
-  border-top: none;
+  height: 4rem;
+  flex-wrap: nowrap;
+  font-size: 1.2rem;
   border-radius: 0px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 .top-likes .border-wrap {
   padding-bottom: 0.5rem;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 .top-likes .top-1 .border-wrap {
   background: #e0e0e0;
@@ -508,7 +509,7 @@ main {
 .touit-list-container {
   display: flex;
   flex-direction: column;
-  height: 50%;
+  height: 65%;
 }
 @media screen and (min-width: 48em) {
   .touit-list-container {
