@@ -43,7 +43,7 @@ main {
 }
 
 #btn-theme {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     padding: 1rem;
@@ -56,4 +56,11 @@ main {
         width: 4rem;
         height: 4rem;
     }
+    @media screen and (min-width: 48em) {
+        position: absolute;
+    }
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
