@@ -4,14 +4,12 @@ $container-md: 68.8rem;
 $container-lg: 91.2rem;
 $container-xl: 112rem;
 // COLORS
-$secondary-color: #EDEBE8;
-$main-text: #111B2F;
-$light-text: #9AA1B0;
-$background: #FFF;
 $background-light: #ededed;
 $background-dark: #232C40;
 $title-light: #414B61;
+$title-dark: #e2e6f0;
 $card-light: #c0c5cf;
+$card-dark: #3f4f70;
 $text-light: #111B2F;
 $text-dark: #EDEBE8;
 //MIXIN
@@ -21,11 +19,26 @@ $text-dark: #EDEBE8;
 }
 
 @mixin neumorphism-hole-light {
-    background: #ededed;
+    background: $background-light;
     box-shadow: inset 5px 5px 13px #c2c2c2, inset -5px -5px 13px #ffffff;
 }
 
 @mixin neumorphism-btn-light {
     background: linear-gradient(145deg, #fefefe, #d5d5d5);
     box-shadow: 11px 11px 24px #c2c2c2, -11px -11px 24px #ffffff;
+}
+
+@mixin neumorphism-std-dark {
+    background: $background-dark;
+    box-shadow: 20px 20px 40px #1d2434, -20px -20px 40px #29344c;
+}
+
+@mixin neumorphism-hole-dark {
+    background: $background-dark;
+    box-shadow: inset 5px 5px 13px #1d2434, inset -5px -5px 13px #29344c;
+}
+
+@mixin neumorphism-btn-dark {
+    background: linear-gradient(145deg, #252f44, #20283a);
+    box-shadow: 11px 11px 24px #1d2434, -11px -11px 24px #29344c;
 }

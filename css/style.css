@@ -231,6 +231,7 @@ h2 {
 body {
   background-color: #ededed;
   color: #111B2F;
+  position: relative;
 }
 
 aside {
@@ -239,6 +240,13 @@ aside {
 
 main {
   grid-area: m;
+}
+
+#btn-theme {
+  position: absolute;
+  margin: 4rem 3rem;
+  border-radius: 1rem;
+  border: 1px solid #111B2F;
 }
 
 .tuile {
@@ -367,7 +375,6 @@ header img {
 .touit #message {
   min-height: 10rem;
   padding-left: 1rem;
-  background-color: #FFF;
   position: relative;
   resize: none;
   background: #ededed;
@@ -534,6 +541,61 @@ header img {
 }
 .touit-list .tuile {
   max-width: 35rem;
+}
+
+body[data-theme=dark] {
+  background-color: #232C40;
+  color: #EDEBE8;
+}
+body[data-theme=dark] .touit {
+  color: #EDEBE8;
+  background: #232C40;
+  box-shadow: 20px 20px 40px #1d2434, -20px -20px 40px #29344c;
+}
+body[data-theme=dark] .touit #pseudo,
+body[data-theme=dark] .touit #message {
+  background: #232C40;
+  box-shadow: inset 5px 5px 13px #1d2434, inset -5px -5px 13px #29344c;
+  color: #EDEBE8;
+}
+body[data-theme=dark] .touit button {
+  background: linear-gradient(145deg, #252f44, #20283a);
+  box-shadow: 11px 11px 24px #1d2434, -11px -11px 24px #29344c;
+  color: #EDEBE8;
+  text-shadow: none;
+}
+body[data-theme=dark] .touit button:hover,
+body[data-theme=dark] .touit button:focus {
+  border-color: #EDEBE8;
+}
+body[data-theme=dark] .tuile .tuile-header {
+  background-color: #3f4f70;
+}
+body[data-theme=dark] .tuile .tuile-header h3 {
+  color: #e2e6f0;
+}
+body[data-theme=dark] .tuile .tuile-main {
+  background: #232C40;
+  box-shadow: inset 5px 5px 13px #1d2434, inset -5px -5px 13px #29344c;
+}
+body[data-theme=dark] .tuile .tuile-footer {
+  background-color: #3f4f70;
+  color: #EDEBE8;
+}
+body[data-theme=dark] .top-likes .tuile-header {
+  background: none;
+}
+body[data-theme=dark] .touit-list-container {
+  background: #232C40;
+  box-shadow: 20px 20px 40px #1d2434, -20px -20px 40px #29344c;
+}
+body[data-theme=dark] .touit-list-container .touit-list {
+  background-color: #232C40;
+}
+body[data-theme=dark] h2,
+body[data-theme=dark] h3 {
+  color: #e2e6f0;
+  text-shadow: none;
 }
 
 /*# sourceMappingURL=style.css.map */

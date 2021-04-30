@@ -54,7 +54,6 @@ aside {
         padding-left: 2rem;
         margin-bottom: 2rem;
         font-size: 2rem;
-        // background-color: $background;
         position: relative;
         @include neumorphism-hole-light;
         border-radius: 10px;
@@ -62,7 +61,6 @@ aside {
     #message {
         min-height: 10rem;
         padding-left: 1rem;
-        background-color: $background;
         position: relative;
         resize: none;
         @include neumorphism-hole-light;
@@ -76,7 +74,7 @@ aside {
         border-radius: 10rem;
         border: none;
         @include neumorphism-btn-light;
-        color: $main-text;
+        color: $text-light;
         img {
             display: inline;
             position: absolute;

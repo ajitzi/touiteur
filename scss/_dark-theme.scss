@@ -1,0 +1,54 @@
+@import 'variables';
+body[data-theme="dark"] {
+    background-color: $background-dark;
+    color: $text-dark;
+    .touit {
+        color: $text-dark;
+        @include neumorphism-std-dark;
+        #pseudo,
+        #message {
+            @include neumorphism-hole-dark;
+            color: $text-dark;
+        }
+        button {
+            @include neumorphism-btn-dark;
+            color: $text-dark;
+            text-shadow: none;
+        }
+        button:hover,
+        button:focus {
+            border-color: $text-dark;
+        }
+    }
+    .tuile {
+        .tuile-header {
+            background-color: $card-dark;
+            h3 {
+                color: $title-dark;
+            }
+        }
+        .tuile-main {
+            @include neumorphism-hole-dark;
+        }
+        .tuile-footer {
+            background-color: $card-dark;
+            color: $text-dark;
+        }
+    }
+    .top-likes {
+        .tuile-header {
+            background: none;
+        }
+    }
+    .touit-list-container {
+        @include neumorphism-std-dark;
+        .touit-list {
+            background-color: $background-dark;
+        }
+    }
+    h2,
+    h3 {
+        color: $title-dark;
+        text-shadow: none;
+    }
+}
