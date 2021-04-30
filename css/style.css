@@ -244,9 +244,18 @@ main {
 
 #btn-theme {
   position: absolute;
-  margin: 4rem 3rem;
-  border-radius: 1rem;
-  border: 1px solid #111B2F;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  margin: 2rem 2rem;
+  background-color: #232C40;
+  border-radius: 50%;
+  border: none;
+  z-index: 10;
+}
+#btn-theme img {
+  width: 4rem;
+  height: 4rem;
 }
 
 .tuile {
@@ -609,6 +618,9 @@ body[data-theme=dark] h2,
 body[data-theme=dark] h3 {
   color: #e2e6f0;
   text-shadow: none;
+}
+body[data-theme=dark] #btn-theme {
+  background-color: #ededed;
 }
 
 /*# sourceMappingURL=style.css.map */

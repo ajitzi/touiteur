@@ -44,7 +44,16 @@ main {
 
 #btn-theme {
     position: absolute;
-    margin: 4rem 3rem;
-    border-radius: 1rem;
-    border: 1px solid $text-light;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    margin: 2rem 2rem;
+    background-color: $background-dark;
+    border-radius: 50%;
+    border: none;
+    z-index: 10;
+    img {
+        width: 4rem;
+        height: 4rem;
+    }
 }

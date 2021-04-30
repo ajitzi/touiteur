@@ -53,4 +53,7 @@ body[data-theme="dark"] {
         color: $title-dark;
         text-shadow: none;
     }
+    #btn-theme {
+        background-color: $background-light;
+    }
 }
