@@ -6,30 +6,28 @@
     justify-content: space-between;
     flex-direction: column;
     h2 {
-        color: $secondary-color;
+        color: $text-light;
     }
     position: relative;
 }
 
 .tuile-trend {
     .tuile-main {
-        // border-bottom: 1px solid $light-text;
-        border-bottom-left-radius: 3rem;
-        border-bottom-right-radius: 3rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
     }
 }
 
 .tuile-header {
-    background-color: $light-text;
+    background-color: $card-light;
     padding: 0.5rem 3rem 0rem 3rem;
-    border-top-left-radius: 3rem;
-    border-top-right-radius: 3rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 .tuile-main {
     padding: 1rem 2rem;
-    background: #e0e0e0;
-    box-shadow: inset 5px 5px 14px #8f8f8f, inset -5px -5px 14px #eeeeee;
+    @include neumorphism-hole-light;
 }
 
 .tuile-footer {
@@ -39,12 +37,10 @@
     align-items: center;
     padding: 0.5rem 2rem;
     text-align: right;
-    // min-height: 5.2rem;
-    color: #000;
-    background-color: $light-text;
-    border: 1px solid $light-text;
-    border-bottom-left-radius: 3rem;
-    border-bottom-right-radius: 3rem;
+    color: $text-light;
+    background-color: $card-light;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     @media screen and (max-width: 48em) {
         justify-content: center;
     }

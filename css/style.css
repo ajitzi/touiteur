@@ -148,6 +148,8 @@ h3,
 button {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
+  text-shadow: -0.5px -0.5px 0 rgba(0, 0, 0, 0.4), 0.5px 0.5px 0 white;
+  color: #414B61;
 }
 
 h2 {
@@ -223,33 +225,12 @@ h2 {
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 10vh 1fr 1fr 1fr;
     gap: 2rem 2rem;
-    grid-template-areas: "h m " "a m " "a m " "a m";
+    grid-template-areas: "a m" "a m " "a m " "a m";
   }
 }
 body {
-  background-color: #e0e0e0;
+  background-color: #ededed;
   color: #111B2F;
-}
-
-header {
-  margin-left: auto;
-  margin-right: auto;
-}
-header img {
-  margin-top: 2rem;
-}
-@media screen and (min-width: 48em) {
-  header {
-    grid-area: h;
-    align-self: center;
-    justify-self: center;
-  }
-}
-header img {
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 2rem;
-  filter: drop-shadow(0 2px 10px #414B61);
 }
 
 aside {
@@ -270,25 +251,25 @@ main {
   position: relative;
 }
 .tuile h2 {
-  color: #EDEBE8;
+  color: #111B2F;
 }
 
 .tuile-trend .tuile-main {
-  border-bottom-left-radius: 3rem;
-  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .tuile-header {
-  background-color: #9AA1B0;
+  background-color: #c0c5cf;
   padding: 0.5rem 3rem 0rem 3rem;
-  border-top-left-radius: 3rem;
-  border-top-right-radius: 3rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .tuile-main {
   padding: 1rem 2rem;
-  background: #e0e0e0;
-  box-shadow: inset 5px 5px 14px #8f8f8f, inset -5px -5px 14px #eeeeee;
+  background: #ededed;
+  box-shadow: inset 5px 5px 13px #c2c2c2, inset -5px -5px 13px #ffffff;
 }
 
 .tuile-footer {
@@ -298,11 +279,10 @@ main {
   align-items: center;
   padding: 0.5rem 2rem;
   text-align: right;
-  color: #000;
-  background-color: #9AA1B0;
-  border: 1px solid #9AA1B0;
-  border-bottom-left-radius: 3rem;
-  border-bottom-right-radius: 3rem;
+  color: #111B2F;
+  background-color: #c0c5cf;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 @media screen and (max-width: 48em) {
   .tuile-footer {
@@ -319,24 +299,44 @@ main {
   padding-right: 1rem;
 }
 
+header {
+  margin-left: auto;
+  margin-right: auto;
+}
+header img {
+  margin-top: 2rem;
+}
+@media screen and (min-width: 48em) {
+  header {
+    align-self: center;
+    justify-self: center;
+  }
+}
+header img {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 2px 10px #111B2F);
+}
+
 @media screen and (min-width: 48em) {
   aside {
-    max-height: 80vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-    gap: 3rem;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
 .touit {
   padding: 2rem;
   border-radius: 3rem;
-  color: #414B61;
+  color: #111B2F;
   align-self: center;
   border-radius: 50px;
-  background: #e0e0e0;
-  box-shadow: 20px 20px 20px #bebebe, -20px -20px 60px #ffffff;
+  background: #ededed;
+  box-shadow: 20px 20px 40px #c9c9c9, -20px -20px 40px #ffffff;
 }
 .touit form {
   display: flex;
@@ -360,8 +360,8 @@ main {
   margin-bottom: 2rem;
   font-size: 2rem;
   position: relative;
-  background: #e0e0e0;
-  box-shadow: inset 5px 5px 10px #8f8f8f, inset -5px -5px 10px #eeeeee;
+  background: #ededed;
+  box-shadow: inset 5px 5px 13px #c2c2c2, inset -5px -5px 13px #ffffff;
   border-radius: 10px;
 }
 .touit #message {
@@ -370,8 +370,8 @@ main {
   background-color: #FFF;
   position: relative;
   resize: none;
-  background: #e0e0e0;
-  box-shadow: inset 5px 5px 14px #8f8f8f, inset -5px -5px 14px #eeeeee;
+  background: #ededed;
+  box-shadow: inset 5px 5px 13px #c2c2c2, inset -5px -5px 13px #ffffff;
   border-radius: 10px;
 }
 .touit button {
@@ -381,8 +381,8 @@ main {
   position: relative;
   border-radius: 10rem;
   border: none;
-  background: linear-gradient(145deg, #f0f0f0, #cacaca);
-  box-shadow: 10px 10px 20px #a8a8a8, -10px -10px 20px #ffffff;
+  background: linear-gradient(145deg, #fefefe, #d5d5d5);
+  box-shadow: 11px 11px 24px #c2c2c2, -11px -11px 24px #ffffff;
   color: #111B2F;
 }
 .touit button img {
@@ -394,14 +394,13 @@ main {
 }
 .touit button:hover,
 .touit button:focus {
-  border: 2px solid #111B2F;
+  border: 1px solid #111B2F;
   transition: 0.2s;
 }
 
 @media screen and (min-width: 48em) {
   .trend-container {
     position: relative;
-    padding: 2rem;
   }
   .trend-container h2 {
     position: absolute;
@@ -429,6 +428,7 @@ main {
     padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -465,18 +465,17 @@ main {
 .top-likes .tuile-header {
   background: none;
 }
-.top-likes .tuile-header h2 {
-  color: #414B61;
-  font-size: 1.2rem;
-}
 .top-likes .tuile-main {
-  font-size: 1.2rem;
-  min-height: 11.8rem;
+  min-height: 12rem;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+@media screen and (min-width: 48rem) {
+  .top-likes .tuile-main {
+    font-size: 1.2rem;
+  }
+}
 .top-likes .tuile-footer {
-  color: #000;
   height: 4rem;
   flex-wrap: nowrap;
   font-size: 1.2rem;
@@ -515,8 +514,8 @@ main {
   .touit-list-container {
     padding: 2rem;
     border-radius: 50px;
-    background: #e0e0e0;
-    box-shadow: 20px 20px 20px #bebebe, -20px -20px 60px #ffffff;
+    background: #ededed;
+    box-shadow: 20px 20px 40px #c9c9c9, -20px -20px 40px #ffffff;
   }
 }
 
@@ -526,7 +525,7 @@ main {
   align-items: center;
   justify-content: space-around;
   gap: 2rem;
-  background-color: #e0e0e0;
+  background-color: #ededed;
   height: auto;
   width: 90%;
   margin-right: auto;

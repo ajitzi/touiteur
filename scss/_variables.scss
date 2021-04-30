@@ -4,10 +4,28 @@ $container-md: 68.8rem;
 $container-lg: 91.2rem;
 $container-xl: 112rem;
 // COLORS
-$main-color: #414B61;
 $secondary-color: #EDEBE8;
 $main-text: #111B2F;
-$secondary-text: #232C40;
 $light-text: #9AA1B0;
-$light-color: #E1DACD;
 $background: #FFF;
+$background-light: #ededed;
+$background-dark: #232C40;
+$title-light: #414B61;
+$card-light: #c0c5cf;
+$text-light: #111B2F;
+$text-dark: #EDEBE8;
+//MIXIN
+@mixin neumorphism-std-light {
+    background: $background-light;
+    box-shadow: 20px 20px 40px #c9c9c9, -20px -20px 40px #ffffff;
+}
+
+@mixin neumorphism-hole-light {
+    background: #ededed;
+    box-shadow: inset 5px 5px 13px #c2c2c2, inset -5px -5px 13px #ffffff;
+}
+
+@mixin neumorphism-btn-light {
+    background: linear-gradient(145deg, #fefefe, #d5d5d5);
+    box-shadow: 11px 11px 24px #c2c2c2, -11px -11px 24px #ffffff;
+}
