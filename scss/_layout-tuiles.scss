@@ -19,15 +19,18 @@
 }
 
 .tuile-header {
-    background-color: $card-light;
     padding: 0.5rem 3rem 0rem 3rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
 
+.tuile-header:not(.top-likes .tuile-header) {
+    @include neumorphism-tuile-light;
+}
+
 .tuile-main {
     padding: 1rem 2rem;
-    @include neumorphism-hole-light;
+    @include neumorphism-bomb-light;
 }
 
 .tuile-footer {
@@ -38,9 +41,9 @@
     padding: 0.5rem 2rem;
     text-align: right;
     color: $text-light;
-    background-color: $card-light;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    @include neumorphism-tuile-light;
     @media screen and (max-width: 48em) {
         justify-content: center;
     }

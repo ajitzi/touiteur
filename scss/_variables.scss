@@ -18,19 +18,24 @@ $text-dark: #EDEBE8;
     box-shadow: 20px 20px 40px #c9c9c9, -20px -20px 40px #ffffff;
 }
 
-@mixin neumorphism-hole-light {
-    background: $background-light;
-    box-shadow: inset 5px 5px 13px #c2c2c2, inset -5px -5px 13px #ffffff;
-}
-
-@mixin neumorphism-btn-light {
-    background: linear-gradient(145deg, #fefefe, #d5d5d5);
-    box-shadow: 11px 11px 24px #c2c2c2, -11px -11px 24px #ffffff;
-}
-
 @mixin neumorphism-std-dark {
     background: $background-dark;
     box-shadow: 20px 20px 40px #1d2434, -20px -20px 40px #29344c;
+}
+
+@mixin neumorphism-touitlist-light {
+    background: linear-gradient(145deg, #fefefe, #d5d5d5);
+    box-shadow: 20px 20px 40px #c9c9c9, -20px -20px 40px #ffffff;
+}
+
+@mixin neumorphism-touitlist-dark {
+    background: linear-gradient(145deg, #252f44, #20283a);
+    box-shadow: 20px 20px 40px #1d2434, -20px -20px 40px #29344c;
+}
+
+@mixin neumorphism-hole-light {
+    background: $background-light;
+    box-shadow: inset 5px 5px 13px #c2c2c2, inset -5px -5px 13px #ffffff;
 }
 
 @mixin neumorphism-hole-dark {
@@ -38,7 +43,32 @@ $text-dark: #EDEBE8;
     box-shadow: inset 5px 5px 13px #1d2434, inset -5px -5px 13px #29344c;
 }
 
+@mixin neumorphism-bomb-light {
+    background: $background-light;
+    box-shadow: inset -5px -5px 13px #c2c2c2, inset 5px 5px 13px #ffffff;
+}
+
+@mixin neumorphism-bomb-dark {
+    background: $background-dark;
+    box-shadow: inset -5px -5px 13px #1d2434, inset 5px 5px 13px #29344c;
+}
+
+@mixin neumorphism-btn-light {
+    background: linear-gradient(145deg, #fefefe, #d5d5d5);
+    box-shadow: 11px 11px 24px #c2c2c2, -11px -11px 24px #ffffff;
+}
+
 @mixin neumorphism-btn-dark {
     background: linear-gradient(145deg, #252f44, #20283a);
     box-shadow: 11px 11px 24px #1d2434, -11px -11px 24px #29344c;
+}
+
+@mixin neumorphism-tuile-light {
+    background: $card-light;
+    box-shadow: inset -5px -5px 10px #9fa4ac, inset 5px 5px 10px #e1e6f2;
+}
+
+@mixin neumorphism-tuile-dark {
+    background: $card-dark;
+    box-shadow: inset -5px -5px 10px #34425d, inset 5px 5px 10px #4a5c83;
 }

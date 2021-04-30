@@ -21,17 +21,17 @@ body[data-theme="dark"] {
         }
     }
     .tuile {
-        .tuile-header {
-            background-color: $card-dark;
+        .tuile-header:not(.top-container .tuile-header) {
+            @include neumorphism-tuile-dark;
             h3 {
                 color: $title-dark;
             }
         }
         .tuile-main {
-            @include neumorphism-hole-dark;
+            @include neumorphism-bomb-dark;
         }
         .tuile-footer {
-            background-color: $card-dark;
+            @include neumorphism-tuile-dark;
             color: $text-dark;
         }
     }
@@ -41,9 +41,11 @@ body[data-theme="dark"] {
         }
     }
     .touit-list-container {
-        @include neumorphism-std-dark;
+        @media screen and (min-width: 48em) {
+            @include neumorphism-std-dark;
+        }
         .touit-list {
-            background-color: $background-dark;
+            background-color: none;
         }
     }
     h2,

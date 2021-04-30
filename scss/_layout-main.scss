@@ -25,14 +25,13 @@ main {
         gap: 2rem;
         flex-direction: row;
         margin-bottom: 2rem;
-        word-wrap: none;
-        overflow-x: scroll;
+        overflow: scroll;
     }
     .tuile {
-        max-width: 35rem;
         display: inline-block;
         flex-shrink: 0;
         flex-grow: 0;
+        max-width: 30rem;
     }
     .tuile-touit {
         background: none;
@@ -51,7 +50,7 @@ main {
         }
     }
     .tuile-footer {
-        height: 4rem;
+        // height: 4rem;
         flex-wrap: nowrap;
         font-size: 1.2rem;
         border-radius: 0px;
@@ -92,10 +91,17 @@ main {
     display: flex;
     flex-direction: column;
     height: 65%;
+    position: relative;
     @media screen and (min-width: 48em) {
         padding: 2rem;
         border-radius: 50px;
         @include neumorphism-std-light;
+        h2 {
+            position: absolute;
+            top: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 }
 
@@ -105,7 +111,7 @@ main {
     align-items: center;
     justify-content: space-around;
     gap: 2rem;
-    background-color: $background-light;
+    background-color: none;
     height: auto;
     width: 90%;
     margin-right: auto;
