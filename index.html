@@ -10,7 +10,13 @@
 </head>
 
 <body>
-    <button id="btn-theme" aria-label="changer de thème">
+    <button id="btn-up" class="btn-nav" aria-label="Remonter en haut">
+        <img src="img/arrow.svg" alt="flèche vers le haut">
+    </button>
+    <button id="btn-close" class="btn-nav">
+        <img src="img/arrow.svg" alt="flèche vers la gauche" aria-label="fermer l'espace commentaire">
+    </button>
+    <button id="btn-theme" class="btn-nav" aria-label="changer de thème">
         <img src="img/light-light.svg" alt="icône d'une ampoule">
     </button>
     <div class="main-grid container">
@@ -77,8 +83,12 @@
                             <div class="tuile-footer">
                                 <p>20/20/2020 20:20</p>
                                 <div class="icons">
-                                    <span>10</span><img src="img/like.svg" alt="">
-                                    <span>2</span><img src="img/comment.svg" alt="">
+                                    <button class="btn-like btn-card">
+                                        <span>10</span><img src="img/like.svg" alt="">
+                                    </button>
+                                    <button class="btn-comment btn-card">
+                                        <span>2</span><img src="img/comment.svg" alt="">
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -97,8 +107,12 @@
                             <div class="tuile-footer">
                                 <p>20/20/2020 20:20</p>
                                 <div class="icons">
-                                    <span>10</span><img src="img/like.svg" alt="">
-                                    <span>2</span><img src="img/comment.svg" alt="">
+                                    <button class="btn-like btn-card">
+                                        <span>10</span><img src="img/like.svg" alt="">
+                                    </button>
+                                    <button class="btn-comment btn-card">
+                                        <span>2</span><img src="img/comment.svg" alt="">
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -114,8 +128,12 @@
                             <div class="tuile-footer">
                                 <p>20/20/2020 20:20</p>
                                 <div class="icons">
-                                    <span>10</span><img src="img/like.svg" alt="">
-                                    <span>2</span><img src="img/comment.svg" alt="">
+                                    <button class="btn-like btn-card">
+                                        <span>10</span><img src="img/like.svg" alt="">
+                                    </button>
+                                    <button class="btn-comment btn-card">
+                                        <span>2</span><img src="img/comment.svg" alt="">
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -265,10 +283,83 @@
                 </section>
             </div>
         </main>
-
-        <footer></footer>
     </div>
+
+    <section class="comments">
+        <div class="comments-container">
+            <article class="tuile tuile-touit">
+                <div class="tuile-header">
+                    <h3>Pseudo</h3>
+                </div>
+                <div class="tuile-main">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, rem assumenda temporibus aperiam qui aliquam architecto. Vel quos provident omnis!</p>
+                </div>
+                <div class="tuile-footer">
+                    <p>20/20/2020 20:20</p>
+                    <div class="icons">
+                        <span>10</span><img src="img/like.svg" alt="">
+                        <span>2</span><img src="img/comment.svg" alt="">
+                    </div>
+                </div>
+            </article>
+            <form action="" class="touit">
+                <label for="pseudo-comment">Votre pseudo</label>
+                <input type="text" id="pseudo-comment">
+                <label for="message-comment">Votre commentaire</label>
+                <textarea name="" id="message-comment"></textarea>
+                <button type="submit" id="btn-comment">Commenter<img src="img/touiteur_facesV2.svg" alt="" aria-hidden="true"> </button>
+            </form>
+            <div class="comments-list">
+                <article>
+                    <h2>Pseudo</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, molestias eaque, fugit quaerat consequatur temporibus expedita facere doloremque porro saepe tenetur vel suscipit! Ipsam illo delectus incidunt aspernatur a natus?</p>
+                    <footer>
+                        <p>20/20/2020</p>
+                        <div class="icones">
+                            <p>2</p>
+                            <img src="img/like.svg" alt="Liker">
+                        </div>
+                    </footer>
+                </article>
+                <article>
+                    <h2>Pseudo</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, molestias eaque, fugit quaerat consequatur temporibus expedita facere doloremque porro saepe tenetur vel suscipit! Ipsam illo delectus incidunt aspernatur a natus?ng
+                        elit. Magni, molestias eaque, fugit quaerat consequatur temporibus expedita facere doloremque porro saepe tenetur vel suscipit! Ipsam illo delectus incidu</p>
+                    <footer>
+                        <p>20/20/2020</p>
+                        <div class="icones">
+                            <p>2</p>
+                            <img src="img/like.svg" alt="Liker">
+                        </div>
+                    </footer>
+                </article>
+                <article>
+                    <h2>Pseudo</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni, molestias eaque, fugit quaerat consequatur temporibus expedita facere doloremque porro saepe tenetur vel suscipit! Ipsam illo delectus incidunt aspernatur a natus?</p>
+                    <footer>
+                        <p>20/20/2020</p>
+                        <div class="icones">
+                            <p>2</p>
+                            <img src="img/like.svg" alt="Liker">
+                        </div>
+                    </footer>
+                </article>
+                <article>
+                    <h2>Pseudo</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. doloremque porro saepe tenetur vel suscipit! Ipsam illo delectus incidunt aspernatur a natus?</p>
+                    <footer>
+                        <p>20/20/2020</p>
+                        <div class="icones">
+                            <p>2</p>
+                            <img src="img/like.svg" alt="Liker">
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </section>
     <script src="script/change_theme.js"></script>
+    <script src="script/menu-comment.js"></script>
 </body>
 
 </html>

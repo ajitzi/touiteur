@@ -1,6 +1,6 @@
 @import 'variables';
 @media screen and (max-width: 48em) {
-    .container {
+    .main-grid {
         width: 100%;
         margin-right: auto;
         margin-left: auto;
@@ -42,13 +42,12 @@ main {
     grid-area: m;
 }
 
-#btn-theme {
+.btn-nav {
     position: fixed;
     top: 0;
-    right: 0;
     padding: 1rem;
     margin: 2rem 2rem;
-    background-color: $background-dark;
+    background: $background-dark;
     border-radius: 50%;
     border: none;
     z-index: 10;
@@ -56,11 +55,39 @@ main {
         width: 4rem;
         height: 4rem;
     }
-    @media screen and (min-width: 48em) {
-        position: absolute;
+    @media screen and (max-width:48em) {
+        bottom: 0;
+        top: initial;
+        margin: 1rem;
+        img {
+            width: 3rem;
+            height: 3rem;
+        }
     }
 }
 
-body::-webkit-scrollbar {
+#btn-theme {
+    right: 0;
+}
+
+#btn-close {
+    left: 0;
     display: none;
+    img {
+        transform: rotate(180deg);
+    }
+}
+
+#btn-up {
+    img {
+        transform: rotate(-90deg);
+    }
+    @media screen and (min-width: 48em) {
+        display: none;
+    }
+}
+
+.go-to-center {
+    left: 50%;
+    transform: translateX(-66%);
 }

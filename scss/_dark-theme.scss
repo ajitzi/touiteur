@@ -53,7 +53,23 @@ body[data-theme="dark"] {
         color: $title-dark;
         text-shadow: none;
     }
-    #btn-theme {
+    .comments {
+        background-color: $background-dark;
+        .comments-container {
+            background-color: $background-dark;
+        }
+        #pseudo-comment,
+        #message-comment {
+            @include neumorphism-hole-dark;
+            color: $text-dark;
+        }
+        article {
+            @include neumorphism-hole-dark;
+        }
+    }
+    #btn-theme,
+    #btn-close,
+    #btn-up {
         background-color: $background-light;
     }
 }

@@ -9,6 +9,15 @@
         color: $text-light;
     }
     position: relative;
+    .btn-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        background: none;
+        border: none;
+        color: inherit;
+    }
 }
 
 .tuile-trend {

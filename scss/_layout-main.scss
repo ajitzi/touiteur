@@ -92,9 +92,11 @@ main {
     flex-direction: column;
     height: 65%;
     position: relative;
+    margin-bottom: 5rem;
     @media screen and (min-width: 48em) {
         padding: 2rem;
         border-radius: 50px;
+        margin-bottom: 0;
         @include neumorphism-std-light;
         h2 {
             position: absolute;

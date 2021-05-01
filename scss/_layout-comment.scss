@@ -1,0 +1,128 @@
+.comments {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: $background-light;
+    display: none;
+    z-index: 5;
+    .comments-container {
+        height: 90%;
+        background-color: $background-light;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        article {
+            max-width: 35rem;
+            margin-bottom: 4rem;
+            @include neumorphism-bomb-light;
+        }
+        @media screen and (min-width: 48em) {
+            max-width: 80%;
+            padding: 5rem;
+        }
+    }
+    .tuile {
+        margin-bottom: 1rem;
+    }
+    .touit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // padding: 2rem;
+        width: 70%;
+        border-radius: 3rem;
+        color: $text-light;
+        align-self: center;
+        border-radius: 50px;
+        margin-bottom: 5rem;
+        @media screen and (max-width: 48em) {
+            width: 100%;
+        }
+        #pseudo-comment {
+            min-height: 5rem;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            position: relative;
+            @include neumorphism-hole-light;
+            border-radius: 10px;
+        }
+        #message-comment {
+            min-height: 10rem;
+            padding-left: 1rem;
+            position: relative;
+            resize: none;
+            @include neumorphism-hole-light;
+            border-radius: 10px;
+        }
+        @include neumorphism-std-light;
+        label {
+            font-weight: 700;
+            z-index: 5;
+        }
+        label,
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            border: none;
+        }
+        button {
+            margin-top: 1rem;
+            min-width: 15rem;
+            height: 5rem;
+            position: relative;
+            border-radius: 10rem;
+            border: none;
+            @include neumorphism-btn-light;
+            color: $text-light;
+            img {
+                display: inline;
+                position: absolute;
+                top: 7px;
+                transform: translateX(5px);
+                width: 2rem;
+            }
+        }
+        button:hover,
+        button:focus {
+            border: 1px solid $text-light;
+            transition: .2s;
+        }
+    }
+    .comments-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-grow: 0;
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 1rem;
+            @include neumorphism-hole-light;
+        }
+        footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .icones {
+                display: flex;
+                align-items: center;
+            }
+        }
+        img {
+            display: inline-block;
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+}
