@@ -28,6 +28,7 @@ function openComment() {
 
 btnOpenComment.forEach(element => element.addEventListener("click", openComment));
 
+
 function goToUp() {
     window.scroll(0, 0);
 }

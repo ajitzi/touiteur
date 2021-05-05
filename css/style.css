@@ -148,7 +148,6 @@ h3,
 button {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
-  text-shadow: -0.5px -0.5px 0 rgba(0, 0, 0, 0.4), 0.5px 0.5px 0 white;
   color: #414B61;
 }
 
@@ -303,8 +302,8 @@ main {
   flex-direction: column;
   position: relative;
 }
-.tuile h2 {
-  color: #111B2F;
+.tuile p {
+  word-break: break-word;
 }
 .tuile .btn-card {
   display: flex;
@@ -343,6 +342,7 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
   padding: 0.5rem 2rem;
   text-align: right;
   color: #111B2F;
@@ -355,6 +355,9 @@ main {
   .tuile-footer {
     justify-content: center;
   }
+}
+.tuile-footer p {
+  font-size: 1.2rem;
 }
 .tuile-footer .icons {
   display: flex;
@@ -549,6 +552,8 @@ header img {
 .top-likes .border-wrap {
   padding-bottom: 0.5rem;
   border-radius: 1rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
 }
 .top-likes .top-1 .border-wrap {
   background: #e0e0e0;
@@ -605,7 +610,10 @@ header img {
   overflow: scroll;
 }
 .touit-list .tuile {
-  max-width: 35rem;
+  width: 35rem;
+}
+.touit-list .tuile .tuile-footer {
+  flex-direction: row;
 }
 
 .comments {
@@ -642,6 +650,11 @@ header img {
 }
 .comments .tuile {
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 48em) {
+  .comments .tuile {
+    width: 35rem;
+  }
 }
 .comments .touit {
   display: flex;

@@ -60,6 +60,8 @@ main {
     .border-wrap {
         padding-bottom: 0.5rem;
         border-radius: 1rem;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
     }
     .top-1 {
         .border-wrap {
@@ -120,6 +122,9 @@ main {
     margin-left: auto;
     overflow: scroll;
     .tuile {
-        max-width: 35rem;
+        width: 35rem;
+        .tuile-footer {
+            flex-direction: row;
+        }
     }
 }

@@ -2,13 +2,14 @@
     height: min-content;
     border-radius: 3rem;
     margin-bottom: 3rem;
+    // min-width: 25rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    h2 {
-        color: $text-light;
-    }
     position: relative;
+    p {
+        word-break: break-word;
+    }
     .btn-card {
         display: flex;
         flex-direction: row;
@@ -47,6 +48,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     padding: 0.5rem 2rem;
     text-align: right;
     color: $text-light;
@@ -55,6 +57,9 @@
     @include neumorphism-tuile-light;
     @media screen and (max-width: 48em) {
         justify-content: center;
+    }
+    p {
+        font-size: 1.2rem;
     }
     .icons {
         display: flex;
