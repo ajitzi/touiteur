@@ -35,6 +35,7 @@ request.open('GET', "http://touiteur.cefim-formation.org/list", true);
 
 const touitContainer = document.querySelector(".touit-list");
 
+let responseComments;
 
 function displayTouit(id, pseudo, message, date, nbLike, nbComment) {
 
@@ -89,13 +90,13 @@ function displayTouit(id, pseudo, message, date, nbLike, nbComment) {
         const requestComments = new XMLHttpRequest();
         requestComments.open("GET", "http://touiteur.cefim-formation.org/comments/list?message_id=" + id, true);
 
+
         requestComments.addEventListener("readystatechange", function() {
             if (requestComments.readyState === XMLHttpRequest.DONE) {
                 if (requestComments.status === 200) {
-
-                    const responseComments = JSON.parse(requestComments.responseText);
+                    responseComments = JSON.parse(requestComments.responseText);
                     console.log(responseComments);
-                    for (i = 0; i < responseComments.length; i++) {
+                    for (i = 0; i < responseComments.comments.length; i++) {
                         const pseudo = responseComments.comments[i].name;
                         const comment = responseComments.comments[i].comment;
                         const timeStamp = responseComments.comments[i].ts;
@@ -200,7 +201,9 @@ request.send();
 btnPrev.addEventListener("click", function() {
     document.querySelector(".comments").style.display = "none";
     btnPrev.style.display = "none";
-    actualTouit.innerHTML = ""; //Afin d'effacer le plus efficacement le touit à commenter. Pas dans un formulaire
+    actualTouit.innerHTML = "";
+    commentsList.innerHTML = "";
+    //Afin d'effacer le plus efficacement le touit et ses commentaires. Pas dans un formulaire.
     if (width.matches) {
         mainContainer.style.display = "grid";
     } else {
