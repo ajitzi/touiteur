@@ -17,6 +17,11 @@ main {
     }
 }
 
+.top-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .top-likes {
     display: flex;
     align-items: center;
@@ -30,8 +35,8 @@ main {
     .tuile {
         display: inline-block;
         flex-shrink: 0;
-        flex-grow: 0;
-        max-width: 30rem;
+        // flex-grow: 0;
+        // width: 30rem;
     }
     .tuile-touit {
         background: none;
@@ -45,8 +50,12 @@ main {
         min-height: 12rem;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        @media screen and (min-width: 48rem) {
-            font-size: 1.2rem;
+        display: flex;
+        p {
+            // justify-content: center;
+            align-self: center;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     .tuile-footer {

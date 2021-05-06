@@ -5,15 +5,20 @@ const formulaire = document.querySelector(".touit-form");
 
 const width = window.matchMedia('(min-width: 768px)');
 const btnPrev = document.querySelector("#btn-close");
-// const commentPage = document.querySelector(".comments");
 const actualTouit = document.querySelector(".actual-touit");
+
 const formComment = document.querySelector(".comments-container form");
+const pseudoComInput = document.querySelector("#pseudo-comment");
+const messageComInput = document.querySelector("#message-comment");
+
 const commentsList = document.querySelector(".comments-list");
 const mainContainer = document.querySelector(".main-grid");
 const btnUpCenter = document.querySelector("#btn-up");
 
+const topLikes = document.querySelector(".top-likes");
 
-//  POST TOUIT ----------------------
+
+//  POSTER UN TOUIT ----------------------
 
 const requestNewTouit = new XMLHttpRequest;
 requestNewTouit.open("POST", "http://touiteur.cefim-formation.org/send");
@@ -28,7 +33,7 @@ formulaire.addEventListener("submit", function(ev) {
 });
 
 
-// AFFICHAGE DES TOUITS ------------------
+// AFFICHAGE DES TOUITS 
 
 const request = new XMLHttpRequest();
 request.open('GET', "http://touiteur.cefim-formation.org/list", true);
@@ -37,10 +42,39 @@ const touitContainer = document.querySelector(".touit-list");
 
 let responseComments;
 
-function displayTouit(id, pseudo, message, date, nbLike, nbComment) {
+request.addEventListener("readystatechange", function() {
+    if (request.readyState === XMLHttpRequest.DONE) {
+        if (request.status === 200) {
+            const response = JSON.parse(request.responseText);
+            response.messages.sort(function(a, b) {
+                return a - b;
+            });
+            for (i = 0; i < response.messages.length; i++) {
+                const id = response.messages[i].id;
+                const pseudo = response.messages[i].name;
+                const message = response.messages[i].message;
+                const timeStamp = response.messages[i].ts;
+                const likes = response.messages[i].likes;
+                const comments = response.messages[i].comments_count;
+
+                const milliseconds = timeStamp * 1000;
+                const dateObject = new Date(milliseconds);
+                const date = dateObject.toLocaleString();
+
+                displayTouit(id, pseudo, message, date, likes, comments, touitZone);
+            }
+        } else {
+            console.error("Touits non chargés");
+        }
+    }
+});
+request.send();
+
+function displayTouit(id, pseudo, message, date, nbLike, nbComment, displayZone, top) {
 
     const tuileTouit = document.createElement("article");
-    tuileTouit.className = "tuile-touit tuile";
+    tuileTouit.className = "tuile-touit tuile top-" + top;
+    tuileTouit.dataset.id = id;
 
     const tuileHeader = document.createElement("div");
     tuileHeader.className = "tuile-header";
@@ -48,6 +82,8 @@ function displayTouit(id, pseudo, message, date, nbLike, nbComment) {
     const pseudoTouit = document.createElement("h3");
     pseudoTouit.textContent = pseudo;
 
+    const borderWrap = document.createElement("div");
+    borderWrap.className = "border-wrap";
 
     const tuileMain = document.createElement("div");
     tuileMain.className = "tuile-main";
@@ -66,7 +102,23 @@ function displayTouit(id, pseudo, message, date, nbLike, nbComment) {
 
     const btnLike = document.createElement("button");
     btnLike.className = "btn-like btn-card"
-        // btnLike.addEventListener("click", addLike);
+        // AJOUTER UN LIKE
+    btnLike.addEventListener("click", function() {
+        const requestLike = new XMLHttpRequest();
+        requestLike.open("PUT", "http://touiteur.cefim-formation.org/likes/send", true);
+        requestLike.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+
+        requestLike.addEventListener("readystatechange", function() {
+            if (requestLike.readyState === XMLHttpRequest.DONE) {
+                if (requestLike.status === 200) {
+                    const response = JSON.parse(requestLike.responseText);
+                    console.log(response);
+                }
+            }
+        })
+        const body = "message_id=" + id;
+        requestLike.send(body);
+    });
 
     const totalLike = document.createElement("span");
     totalLike.textContent = nbLike;
@@ -76,7 +128,7 @@ function displayTouit(id, pseudo, message, date, nbLike, nbComment) {
 
     const btnComment = document.createElement("button");
     btnComment.className = "btn-comment btn-card";
-
+    // OUVRIR LES COMMENTAIRES D'UN TOUIT
     btnComment.addEventListener("click", function() {
         document.querySelector(".comments").style.display = "block";
         btnPrev.style.display = "block";
@@ -87,6 +139,7 @@ function displayTouit(id, pseudo, message, date, nbLike, nbComment) {
         const copytuileTouit = tuileTouit.cloneNode(true);
         actualTouit.appendChild(copytuileTouit);
 
+        // AFFICHER LES COMMENTAIRES
         const requestComments = new XMLHttpRequest();
         requestComments.open("GET", "http://touiteur.cefim-formation.org/comments/list?message_id=" + id, true);
 
@@ -122,8 +175,6 @@ function displayTouit(id, pseudo, message, date, nbLike, nbComment) {
     const iconComment = document.createElement("img");
     iconComment.setAttribute("src", "img/comment.svg");
 
-    // btnComment.dataset.id = id;
-
     btnComment.appendChild(totalComment);
     btnComment.appendChild(iconComment);
 
@@ -136,17 +187,26 @@ function displayTouit(id, pseudo, message, date, nbLike, nbComment) {
     tuileFooter.appendChild(dateTouit);
     tuileFooter.appendChild(iconsTouit);
 
-
     tuileMain.appendChild(messageTouit);
 
     tuileHeader.appendChild(pseudoTouit);
 
-    tuileTouit.appendChild(tuileHeader);
-    tuileTouit.appendChild(tuileMain);
-    tuileTouit.appendChild(tuileFooter);
+    if (!isNaN(top)) {
+        borderWrap.appendChild(tuileMain);
+        borderWrap.appendChild(tuileFooter);
 
-    touitZone.appendChild(tuileTouit);
+        tuileTouit.appendChild(tuileHeader);
+        tuileTouit.appendChild(borderWrap);
+    } else {
+        tuileTouit.appendChild(tuileHeader);
+        tuileTouit.appendChild(tuileMain);
+        tuileTouit.appendChild(tuileFooter);
+    }
+    displayZone.appendChild(tuileTouit);
 }
+
+
+// AFFICHAGE DES COMMENTAIRES
 
 function displayComment(pseudo, comment, date) {
     const tuileComment = document.createElement("article");
@@ -167,34 +227,22 @@ function displayComment(pseudo, comment, date) {
     commentsList.appendChild(tuileComment);
 }
 
-request.addEventListener("readystatechange", function() {
-    if (request.readyState === XMLHttpRequest.DONE) {
-        if (request.status === 200) {
-            const response = JSON.parse(request.responseText);
-            response.messages.sort(function(a, b) {
-                return a - b;
-            });
-            for (i = 0; i < response.messages.length; i++) {
-                const id = response.messages[i].id;
-                const pseudo = response.messages[i].name;
-                const message = response.messages[i].message;
-                const timeStamp = response.messages[i].ts;
-                const likes = response.messages[i].likes;
-                const comments = response.messages[i].comments_count;
 
-                const milliseconds = timeStamp * 1000;
-                const dateObject = new Date(milliseconds);
-                const date = dateObject.toLocaleString();
+// POSTER UN COMMENTAIRE
 
-                displayTouit(id, pseudo, message, date, likes, comments);
+const requestNewComment = new XMLHttpRequest;
+requestNewComment.open("POST", "http://touiteur.cefim-formation.org/comments/send");
+requestNewComment.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
 
-            }
-        } else {
-            console.error("Touits non chargés");
-        }
-    }
+formComment.addEventListener("submit", function(ev) {
+    ev.preventDefault();
+    const id = document.querySelector(".actual-touit .tuile-touit").dataset.id;
+    let body = "message_id=" + id + "&name=" + pseudoComInput.value + "&comment=" + messageComInput.value;
+    requestNewComment.send(body);
+    pseudoComInput.value = "";
+    messageComInput.value = "";
 });
-request.send();
+
 
 // EVENTS COMMENTAIRES --------------
 
@@ -216,3 +264,60 @@ btnPrev.addEventListener("click", function() {
 btnUpCenter.addEventListener("click", function() {
     window.scroll(0, 0);
 });
+
+
+// TOP TOUITS
+
+const requestTop = new XMLHttpRequest();
+requestTop.open('GET', "http://touiteur.cefim-formation.org/likes/top?count=3", true);
+requestTop.addEventListener("readystatechange", function() {
+    if (requestTop.readyState === XMLHttpRequest.DONE) {
+        if (requestTop.status === 200) {
+            const response = JSON.parse(requestTop.responseText);
+            // console.log(response);
+            let topNumber = 1;
+            for (i = 0; i < response.top.length; i++) {
+                const id = response.top[i].id;
+                const pseudo = response.top[i].name;
+                const message = response.top[i].message;
+                const timeStamp = response.top[i].ts;
+                const likes = response.top[i].likes;
+                const comments = response.top[i].comments_count;
+
+                const milliseconds = timeStamp * 1000;
+                const dateObject = new Date(milliseconds);
+                const date = dateObject.toLocaleString();
+
+                displayTouit(id, pseudo, message, date, likes, comments, topLikes, topNumber);
+                topNumber++;
+            }
+        }
+    }
+})
+requestTop.send();
+
+
+// AFFICHAGE TRENDING
+let compareArray;
+const requestTrend = new XMLHttpRequest();
+requestTrend.open('GET', "http://touiteur.cefim-formation.org/trending", true);
+requestTrend.addEventListener("readystatechange", function() {
+    if (requestTrend.readyState === XMLHttpRequest.DONE) {
+        if (requestTrend.status === 200) {
+            const response = JSON.parse(requestTrend.responseText);
+            let responseKeys = Object.keys(response);
+            let responseValue = Object.values(response);
+            compareArray = [];
+            for (i = 0; i < responseKeys.length; i++) {
+                compareArray[i] = [responseValue[i], responseKeys[i]];
+            }
+            compareArray.sort(function(a, b) {
+                return b[0] - a[0];
+            });
+            for (let i = 0; i < 30; i++) {
+                document.querySelector(".trend .tuile-main p").textContent += "#" + compareArray[i][1] + " ";
+            }
+        }
+    }
+})
+requestTrend.send();

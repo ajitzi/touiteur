@@ -112,20 +112,9 @@
             border-radius: 1rem;
             @include neumorphism-hole-light;
         }
-        footer {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            .icones {
-                display: flex;
-                align-items: center;
-            }
-        }
-        img {
-            display: inline-block;
-            width: 4rem;
-            height: 4rem;
+        p:last-child {
+            text-align: right;
+            margin-top: 2rem;
         }
     }
 }
